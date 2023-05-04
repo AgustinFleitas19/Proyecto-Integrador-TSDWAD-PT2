@@ -6,10 +6,13 @@ import { BoletosComponent } from './pages/boletos/boletos.component';
 import { FavoritosComponent } from './pages/favoritos/favoritos.component';
 import { MetodosDePagoComponent } from './pages/metodos-de-pago/metodos-de-pago.component';
 import { MainComponent } from './main/main.component';
+import { registerLocaleData } from '@angular/common';
+import { RegisterComponent } from './shared/register/register.component';
 
 const routes: Routes = [
 
-   {path: 'index', component: MainComponent},
+  {path: 'index', component: MainComponent},
+  { path: 'register', component: RegisterComponent},
   { path: 'dashboard', component: DashboardComponent,
 children:[
 
@@ -17,7 +20,7 @@ children:[
    {path: 'boletos', component: BoletosComponent},
    {path: 'favoritos', component: FavoritosComponent},
    {path: 'metodos-de-pago', component: MetodosDePagoComponent},
-
+  
   ]},
 
 ];

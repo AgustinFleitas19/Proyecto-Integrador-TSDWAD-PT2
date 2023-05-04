@@ -11,6 +11,7 @@ import { FavoritosComponent } from './pages/favoritos/favoritos.component';
 import { MetodosDePagoComponent } from './pages/metodos-de-pago/metodos-de-pago.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { RegisterComponent } from './shared/register/register.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     FavoritosComponent,
     MetodosDePagoComponent,
     MainComponent,
-    FooterComponent
+    FooterComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
