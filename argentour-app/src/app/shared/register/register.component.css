@@ -1,0 +1,12 @@
+/* Color fondo modal */
+.modal-content {
+    background-color: var(--ColorPrincipal);
+}
+/* Color letras del modal*/
+label {
+    color: white;
+}
+/* Color header del modal */
+.modal-header {
+    color: white;
+}

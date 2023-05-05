@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --ColorPrincipal: #785bc2;
+  --ColorAlternante: #fcf304;
+
+  --FuenteMartel: "Martel Sans", sans-serif;
+  --FuenteZilla: "ZillaSlabHighlight";
+  --FuenteMontserrat: "Montserrat";
+  --FuenteYadelvi: "Yaldevi";
+  --FuenteArchivo: "Archivo";
+  --FuenteCalibri: "Calibri";
+  --FuenteFinland: "Finland";
+  --FuenteInduccion: "Induccion";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--FuenteCalibri);
+}
+
+@font-face {
+  font-family: "Induccion";
+  src: url(./assets/fonts/FontsFree-Net-induction.ttf);
+}
