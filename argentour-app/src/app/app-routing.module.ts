@@ -18,14 +18,14 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'carrito', component: CarritoComponent},
   { path: 'dashboard', component: DashboardComponent,
-  
-children:[ 
+
+children:[
 
    {path: 'perfil', component: MiPerfilComponent},
    {path: 'boletos', component: BoletosComponent},
    {path: 'favoritos', component: FavoritosComponent},
    {path: 'metodos-de-pago', component: MetodosDePagoComponent},
-  
+
   ]},
 
 ];
