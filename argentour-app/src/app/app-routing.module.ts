@@ -8,13 +8,18 @@ import { MetodosDePagoComponent } from './pages/metodos-de-pago/metodos-de-pago.
 import { MainComponent } from './main/main.component';
 import { registerLocaleData } from '@angular/common';
 import { RegisterComponent } from './shared/register/register.component';
+import { LoginComponent } from './login/login.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 const routes: Routes = [
 
   {path: 'index', component: MainComponent},
   { path: 'register', component: RegisterComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'carrito', component: CarritoComponent},
   { path: 'dashboard', component: DashboardComponent,
-children:[
+  
+children:[ 
 
    {path: 'perfil', component: MiPerfilComponent},
    {path: 'boletos', component: BoletosComponent},

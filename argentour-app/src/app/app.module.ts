@@ -12,6 +12,8 @@ import { MetodosDePagoComponent } from './pages/metodos-de-pago/metodos-de-pago.
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { RegisterComponent } from './shared/register/register.component';
+import { LoginComponent } from './login/login.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { RegisterComponent } from './shared/register/register.component';
     MetodosDePagoComponent,
     MainComponent,
     FooterComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
