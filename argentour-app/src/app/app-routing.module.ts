@@ -13,7 +13,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 
 const routes: Routes = [
 
-  {path: 'index', component: MainComponent},
+  {path: ' ', component: MainComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
   { path: 'carrito', component: CarritoComponent},

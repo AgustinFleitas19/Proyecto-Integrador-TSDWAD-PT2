@@ -9,12 +9,21 @@
   display: flex;
   justify-content: space-around;
 }
+.logo{
+  display: flex;
+  align-items: flex-start;
+}
 .logotipo {
-  font-family: var(--FuenteMartel);
-  font-size: 50px;
+  font-family: Induccion;
+  font-size: 30px;
   color: var(--ColorAlternante);
   margin: 30px;
-  margin-right: 60px;
+  margin-right: 10px;
+}
+.img-logo{
+  width: 80px;
+  height: 80px;
+  margin-top: 10px;
 }
 
 .btn {

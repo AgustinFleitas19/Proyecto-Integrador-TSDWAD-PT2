@@ -2,13 +2,17 @@
 h1 {
     color: #ffffff;
 }
+.flex-login{
+  display: flex;
+  justify-content: flex-end;
+}
 .formulario {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
-    background: #29203e;
+    background: var(--ColorPrincipal);
     border-radius: 10px;
 }
 
@@ -92,7 +96,7 @@ input[type="submit"] {
      font-size: 18px;
      color:white;
      cursor: pointer;
-     outline: none;     
+     outline: none;
 }
 
 input[type="submit"]:hover {
@@ -104,7 +108,7 @@ input[type="submit"]:hover {
     margin: 30px 0;
     text-align: center;
     font-size: 16px;
-    color:rgb(255, 255, 255);   
+    color:rgb(255, 255, 255);
 }
 
 .registrarse a {
