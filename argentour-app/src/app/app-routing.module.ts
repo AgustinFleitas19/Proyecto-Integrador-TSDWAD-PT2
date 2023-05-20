@@ -11,9 +11,10 @@ import { RegisterComponent } from './shared/register/register.component';
 import { LoginComponent } from './login/login.component';
 import { CarritoComponent } from './carrito/carrito.component';
 
+
 const routes: Routes = [
 
-  {path: ' ', component: MainComponent},
+  {path: '', component: MainComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
   { path: 'carrito', component: CarritoComponent},
