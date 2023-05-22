@@ -14,8 +14,8 @@ class Usuario(models.Model):
     apellido = models.CharField(max_length=45)
     edad = models.IntegerField()
     dni = models.IntegerField()
-    Provincia = models.IntegerField()
-    Ciudad = models.IntegerField()
+    provincia = models.IntegerField()
+    ciudad = models.IntegerField()
     correo = models.CharField(max_length=99)
     Rol = models.IntegerField()
 
