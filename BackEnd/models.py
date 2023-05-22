@@ -17,6 +17,6 @@ class Usuario(models.Model):
     provincia = models.IntegerField()
     ciudad = models.IntegerField()
     correo = models.CharField(max_length=99)
-    Rol = models.IntegerField()
+    rol = models.IntegerField()
 
 
