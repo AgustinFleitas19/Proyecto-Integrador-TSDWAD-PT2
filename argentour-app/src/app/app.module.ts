@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +17,7 @@ import { RegisterComponent } from './shared/register/register.component';
 import { LoginComponent } from './login/login.component';
 import { CarritoComponent } from './carrito/carrito.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,11 +31,14 @@ import { CarritoComponent } from './carrito/carrito.component';
     FooterComponent,
     RegisterComponent,
     LoginComponent,
-    CarritoComponent
+    CarritoComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

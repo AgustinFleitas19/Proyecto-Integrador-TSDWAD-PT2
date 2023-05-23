@@ -1,0 +1,180 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Agustin",
+      "apellido":"Bengolea",
+      "idProvincia": 2,
+      "idCiudad": 13,
+      "correo": "agustinbengolea97@gmail.com",
+      "usuario": "AgustinBen",
+      "clave": "1234",
+      "idRol": 2
+    }  
+  ],  
+
+  "destinos": [
+    {
+      "id": 1,
+      "region": "centro",
+      "titulo": "Córdoba-Buenos Aires",
+      "origen": "Terminal de Córdoba",
+      "destino": "Terminal de Retiro, Bs As",
+      "horarioSalida":"08:00",
+      "horarioLlegada":"20:00",
+      "precio": 2000
+
+    },
+    {
+      "id": 2,
+      "titulo": "Córdoba-Corrientes",
+      "region": "noreste",
+      "origen": "Terminal de Córdoba",
+      "destino": "Terminal de Corrientes",
+      "horarioSalida":"07:00",
+      "horarioLlegada":"21:00",
+      "precio": 50000
+    },
+    {
+      "id": 3,
+      "titulo": "Córdoba-Salta",
+      "region":"noroeste",
+      "origen": "Terminal de Córdoba",
+      "destino": "Terminal de Salta",
+      "horarioSalida":"09:00",
+      "horarioLlegada":"21:00",
+      "precio": 55000
+      
+    },
+    {
+      "id": 4,
+      "titulo":"Cordoba-Misiones",
+      "region": "noreste",
+      "origen": "Terminal de Córdoba",
+      "destino": "Terminal de Misiones",
+      "horarioSalida":"20:00",
+      "horarioLlegada":"12:00",
+      "precio": 45999
+      
+    },
+    {
+      "id": 5,
+      "region": "noroeste",
+      "titulo": "Córdoba-Jujuy",
+      "origen": "Terminal de Córdoba",
+      "destino": "Terminal de Jujuy",
+      "horarioSalida":"08:00",
+      "horarioLlegada":"20:00",
+      "precio": 70000
+    },
+    {
+      "id": 6,
+      "region": "patagonia",
+      "titulo": "Córdoba-Bariloche",
+      "origen": "Terminal de Córdoba",
+      "destino": "Terminal de Bariloche",
+      "horarioSalida":"08:00",
+      "horarioLlegada":"20:00",
+      "precio": 100000
+      
+    },
+    {
+      "id": 7,
+      "region": "patagonia",
+      "titulo": "Córdoba-Peninsula de Valdez",
+      "origen": "Terminal de Córdoba",
+      "destino": "Terminal de Chubut",
+      "horarioSalida":"08:00",
+      "horarioLlegada":"20:00",
+      "precio": 90000
+      
+    },
+    {
+      "id": 8,
+      "region": "patagonia",
+      "titulo": "Córdoba-Usuahia",
+      "origen": "Terminal de Córdoba",
+      "destino": "Terminal de Usuahia",
+      "horarioSalida":"08:00",
+      "horarioLlegada":"20:00",
+      "precio": 120000
+      
+    },
+    {
+      "id": 8,
+      "region": "centro",
+      "titulo": "Córdoba-Mar del Plata",
+      "origen": "Terminal de Córdoba",
+      "destino": "Terminal de Usuahia",
+      "horarioSalida":"08:00",
+      "horarioLlegada":"20:00",
+      "precio": 120000
+      
+    },
+    {
+      "id": 9,
+      "region": "patagonia",
+      "titulo": "Córdoba-Neuquen",
+      "origen": "Terminal de Córdoba",
+      "destino": "Terminal de Neuquen",
+      "horarioSalida":"08:00",
+      "horarioLlegada":"20:00",
+      "precio": 80000
+    },
+    {
+      "id": 10,
+      "region": "cuyo",
+      "titulo": "Córdoba-Mendoza",
+      "origen": "Terminal de Córdoba",
+      "destino": "Terminal de Mendoza",
+      "horarioSalida":"08:00",
+      "horarioLlegada":"20:00",
+      "precio": 50000
+    }
+
+  ],
+  "metodosdepago": [
+    
+    {
+      "id":1,
+      "nombre": "Mercado Pago"
+    },
+    {
+      "id":2,
+      "nombre":"Visa"
+    },
+
+    {
+      "id":3,
+      "nombre":"Mastercard"
+    },
+
+    {
+      "id":4,
+      "nombre": "Paypal"
+    }
+
+  ],
+
+  "carrito": [
+    {
+      "idCarrito": 1,
+      "subTotal": 0,
+      "idUsuario": 1,
+      "idProducto": 1
+}
+  ],
+
+  "producto": [
+    {
+    "idProducto":1,
+    "nombreProducto": "Quebrada de Humahuaca",
+    "imagenProducto": "",
+    "precio" : 200000,
+    "descProducto": "",
+    "idTipoProducto" : 1
+
+  }]
+
+
+}
