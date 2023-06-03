@@ -10,6 +10,7 @@ import { registerLocaleData } from '@angular/common';
 import { RegisterComponent } from './shared/register/register.component';
 import { LoginComponent } from './login/login.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { FormularioProductosComponent } from './pages/formulario-productos/formulario-productos.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
   { path: 'carrito', component: CarritoComponent},
+  { path: 'crear-producto', component: FormularioProductosComponent},
+
+
   { path: 'dashboard', component: DashboardComponent,
 
 children:[

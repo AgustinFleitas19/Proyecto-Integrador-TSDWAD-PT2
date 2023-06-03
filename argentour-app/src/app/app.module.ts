@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +18,9 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { RegisterComponent } from './shared/register/register.component';
 import { LoginComponent } from './login/login.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { FormularioProductosComponent } from './pages/formulario-productos/formulario-productos.component';
+
+
 
 
 @NgModule({
@@ -32,12 +37,15 @@ import { CarritoComponent } from './carrito/carrito.component';
     RegisterComponent,
     LoginComponent,
     CarritoComponent,
+    FormularioProductosComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    
 
   ],
   providers: [],
