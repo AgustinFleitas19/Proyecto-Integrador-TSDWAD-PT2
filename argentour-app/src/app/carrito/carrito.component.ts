@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { DestinosService } from '../servicios/destinos/destinos.service';
+import { ProductosService } from '../servicios/productos/productos.service';
+
 
 
 @Component({
@@ -9,12 +10,12 @@ import { DestinosService } from '../servicios/destinos/destinos.service';
 })
 export class CarritoComponent {
 
-  destinosList:any;
-  constructor(private destinos: DestinosService){
+  productosList:any;
+  constructor(private productosService: ProductosService){
 
-    this.destinos.obtenerDestinos().subscribe(
-      {next: (destinosData) =>{
-        this.destinosList= destinosData;
+    this.productosService.obtenerProductos().subscribe(
+      {next: (productosData) =>{
+        this.productosList = productosData;
       },
       error: (errorData) => {
         console.error(errorData);

@@ -19,8 +19,15 @@
   box-sizing: border-box;
   font-family: var(--FuenteCalibri);
 }
+.ng-valid:not(form).ng-touched {
+  border-left: 5px solid #42A948;
+}
 
+.ng-invalid:not(form).ng-touched {
+  border-left: 5px solid #a94442;
+}
 @font-face {
   font-family: "Induccion";
   src: url(./assets/fonts/FontsFree-Net-induction.ttf);
 }
+
