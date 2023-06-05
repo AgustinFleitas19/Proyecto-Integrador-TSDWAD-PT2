@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UsuarioService } from 'src/app/servicios/usuario/usuario.service';
 
 @Component({
   selector: 'app-mi-perfil',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./mi-perfil.component.css']
 })
 export class MiPerfilComponent {
+  usuario:any;
+  constructor(private usuarioServicio:UsuarioService){
+
+    this.usuarioServicio.obtenerPerfil().subscribe(
+      {next: (perfilData) =>{
+        this.usuario = perfilData;
+      },
+      error: (errorData) => {
+        console.error(errorData);
+        
+      }
+    });
+
+  }
 
 }

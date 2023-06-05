@@ -10,7 +10,7 @@
     <h1>Ingresá</h1>
     <form [formGroup]="formularioLogin" (ngSubmit)="LogIn()">
         <div class="username">
-            <input type="text" name="email" formControlName="correo">
+            <input type="text" name="email" formControlName="email">
             <label for="email">Correo electronico</label>
         </div>
         <div *ngIf="Correo?.errors && Correo?.touched">

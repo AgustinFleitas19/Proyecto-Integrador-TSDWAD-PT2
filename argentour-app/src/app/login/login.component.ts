@@ -19,7 +19,7 @@ export class LoginComponent {
 
     this.formularioLogin= this.formBuilder.group(
       {
-        correo: ["", [Validators.required, Validators.email]], 
+        email: ["", [Validators.required, Validators.email]], 
         password: ["", [Validators.required]],
       }
     )
@@ -27,7 +27,7 @@ export class LoginComponent {
   }
 
   get Correo (){
-    return this.formularioLogin.get("correo");
+    return this.formularioLogin.get("email");
   }
 
   get Password (){

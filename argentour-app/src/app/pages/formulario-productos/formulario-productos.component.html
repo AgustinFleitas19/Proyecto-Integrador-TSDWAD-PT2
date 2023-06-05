@@ -5,7 +5,7 @@
         <div class="row mb-3">
         <div class="col">
           <label for="nombre-del-producto">Nombre del producto:</label>
-          <input type="text" class="form-control" id="nombre-del-producto" formControlName="nombreProducto" placeholder="Nombre del producto" >
+          <input type="text" class="form-control" id="nombre-del-producto" formControlName="nombre" placeholder="Nombre del producto" >
         </div>
         <div *ngIf="NombreProducto?.errors && NombreProducto?.touched">
           <p *ngIf="NombreProducto?.hasError('required')" class="text-danger">
@@ -41,6 +41,24 @@
                 </p>
               </div>
             </div>
+            <div class="col">
+              <label for="id-categoria">Categoria:</label>
+                <input type="text" class="form-control" id="id-categoria" formControlName="id_Categoria">
+                <div *ngIf="id_Categoria?.errors && id_Categoria?.touched">
+                  <p *ngIf="id_Categoria?.hasError('required')" class="text-danger">
+                    Campo requerido
+                  </p>
+                </div>
+              </div>
+              <div class="col">
+                <label for="cantidad">Cantidad:</label>
+                  <input type="text" class="form-control" id="cantidad" formControlName="cantidad">
+                  <div *ngIf="Cantidad?.errors && Cantidad?.touched">
+                    <p *ngIf="Cantidad?.hasError('required')" class="text-danger">
+                      Campo requerido
+                    </p>
+                  </div>
+                </div>
         </div>
         <div>
         <button class="btn btn-primary" type="submit">Crear Producto</button>
