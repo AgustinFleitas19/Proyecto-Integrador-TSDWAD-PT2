@@ -16,16 +16,18 @@ export class FormularioProductosComponent {
     private productosService: ProductosService){
     this.formularioProducto= this.formBuilder.group(
       {
-      nombreProducto: ["", [Validators.required]],
+      nombre: ["", [Validators.required]],
       precio: ["", [Validators.required]],
       descripcion: ["", [Validators.required]], 
-      imagen: ["", [Validators.required]]
+      imagen: ["", [Validators.required]],
+      cantidad: [1, Validators.required],
+      id_Categoria:[1, [Validators.required]]
     }
     )  
   }
 
   get NombreProducto (){
-    return this.formularioProducto.get("nombreProducto");
+    return this.formularioProducto.get("nombre");
   }
 
   get Precio (){
@@ -38,6 +40,14 @@ export class FormularioProductosComponent {
 
   get Descripcion (){
     return this.formularioProducto.get("descripcion");
+  }
+
+  get id_Categoria(){
+    return this.formularioProducto.get("id_Categoria");
+  }
+
+  get Cantidad(){
+    return this.formularioProducto.get("cantidad");
   }
 
   crearProducto(){

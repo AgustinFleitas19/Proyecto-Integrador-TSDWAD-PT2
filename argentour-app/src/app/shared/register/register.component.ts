@@ -25,31 +25,31 @@ export class RegisterComponent{
 
     this.formularioRegistro= this.formBuilder.group(
       {
-        nombre:["", [Validators.required]],
-        apellido: ["", [Validators.required]],
-        correo:["", [Validators.required, Validators.email]],
-        usuario: ["", [Validators.required]],
+        ///name:["", [Validators.required]],
+       /// surname: ["", [Validators.required]],
+        email:["", [Validators.required, Validators.email]],
+        username: ["", [Validators.required]],
         password: ["", [Validators.required, Validators.minLength(8)]],
-        provincia: ["", [Validators.required]],
-        ciudad: ["", [Validators.required]],
+        ///provincia: ["", [Validators.required]],
+        ///ciudad: ["", [Validators.required]],
       }
     )
 
   }
 
-  get Nombre(){
-    return this.formularioRegistro.get("nombre")
+  /*get Nombre(){
+    return this.formularioRegistro.get("name")
   }
   get Apellido(){
-    return this.formularioRegistro.get("apellido")
-  }
+    return this.formularioRegistro.get("surname")
+  }*/
 
   get Correo(){
-    return this.formularioRegistro.get("correo")
+    return this.formularioRegistro.get("email")
   }
 
   get Usuario(){
-    return this.formularioRegistro.get("usuario")
+    return this.formularioRegistro.get("username")
   }
 
 
@@ -57,13 +57,13 @@ export class RegisterComponent{
     return this.formularioRegistro.get("password")
   }
 
-  get Provincia (){
+  /*get Provincia (){
     return this.formularioRegistro.get("provincia")
   }
 
   get Ciudad(){
     return this.formularioRegistro.get("ciudad")
-  }
+  }*/
 
   registrarUsuario(){
     if (this.formularioRegistro.valid){

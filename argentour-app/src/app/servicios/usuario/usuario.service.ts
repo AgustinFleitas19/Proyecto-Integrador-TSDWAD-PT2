@@ -7,20 +7,24 @@ import { Observable } from 'rxjs';
 })
 export class UsuarioService {
   listaUsuarios:any;
-  url:string = "http://localhost:3000/usuarios";
+  usuario: any;
+  url:string = "http://127.0.0.1:8000/api/";
 
   constructor( private http: HttpClient) { }
 
   obtenerUsuarios(): Observable<any>{
-    this.listaUsuarios= this.http.get(this.url);
+    this.listaUsuarios= this.http.get(this.url + "usuarios/");
     return this.listaUsuarios}
-
+  obtenerPerfil(): Observable<any>{
+    this.usuario= this.http.get(this.url + "user/profile/")
+    return this.usuario
+  }
   crearUsuario(body:any): Observable <any>{
-    return this.http.post(this.url, body);
+    return this.http.post(this.url + "auth/registro/", body);
    }
 
-  actualizarUsurio(body:any): Observable<any>{
-    return this.http.put(this.url, body)
+  actualizarUsuario(body:any): Observable<any>{
+    return this.http.put(this.url+ "user/profile/", body)
   }
 
 
