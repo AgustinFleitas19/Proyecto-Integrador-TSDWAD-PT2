@@ -1,0 +1,12 @@
+<section class="contenedor">
+    <!-- Contenedor de elementos -->
+    <div class="contenedor-items">
+        <div class="item" *ngFor="let producto of productosList">
+            <span class="titulo-item">{{producto.nombre}}.</span>
+            <img src="imagenes.css/terminal-de-retiro-bs.jpeg" alt="" class="img-item">
+            <span class="precio-item">{{producto.precio | currency}}</span>
+            <p class="descripcion">{{producto.descripcion}}</p>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+    </div>
+</section>

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ProductosService } from '../servicios/productos/productos.service';
 
 
 
@@ -10,19 +9,6 @@ import { ProductosService } from '../servicios/productos/productos.service';
 })
 export class CarritoComponent {
 
-  productosList:any;
-  constructor(private productosService: ProductosService){
-
-    this.productosService.obtenerProductos().subscribe(
-      {next: (productosData) =>{
-        this.productosList = productosData;
-      },
-      error: (errorData) => {
-        console.error(errorData);
-        
-      }
-    });
-  }
-
+  
 
 }

@@ -11,15 +11,19 @@ import { RegisterComponent } from './shared/register/register.component';
 import { LoginComponent } from './login/login.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { FormularioProductosComponent } from './pages/formulario-productos/formulario-productos.component';
+import { CatalogoComponent } from './pages/catalogo/catalogo.component';
+import { DashboardAdminComponent } from './pages/dashboard-admin/dashboard-admin.component';
+import { ListaUsuariosComponent } from './pages/lista-usuarios/lista-usuarios.component';
 
 
 const routes: Routes = [
-
-  {path: '', component: MainComponent},
+  { path:"", redirectTo:'/inicio', pathMatch: 'full'},
+  {path: 'inicio', component: MainComponent},
   { path: 'register', component: RegisterComponent},
+  {path: 'destinos', component:CatalogoComponent},
   { path: 'login', component: LoginComponent},
   { path: 'carrito', component: CarritoComponent},
-  { path: 'crear-producto', component: FormularioProductosComponent},
+  
 
 
   { path: 'dashboard', component: DashboardComponent,
@@ -32,7 +36,11 @@ children:[
    {path: 'metodos-de-pago', component: MetodosDePagoComponent},
 
   ]},
-
+  {path: 'admin', component: DashboardAdminComponent,
+  children:[
+    { path: 'crear-producto', component: FormularioProductosComponent},
+    { path: 'lista-usuarios', component: ListaUsuariosComponent},
+  ]}
 ];
 
 @NgModule({
