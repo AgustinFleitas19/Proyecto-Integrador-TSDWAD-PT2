@@ -19,6 +19,9 @@ import { RegisterComponent } from './shared/register/register.component';
 import { LoginComponent } from './login/login.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { FormularioProductosComponent } from './pages/formulario-productos/formulario-productos.component';
+import { CatalogoComponent } from './pages/catalogo/catalogo.component';
+import { DashboardAdminComponent } from './pages/dashboard-admin/dashboard-admin.component';
+import { ListaUsuariosComponent } from './pages/lista-usuarios/lista-usuarios.component';
 
 
 
@@ -38,6 +41,9 @@ import { FormularioProductosComponent } from './pages/formulario-productos/formu
     LoginComponent,
     CarritoComponent,
     FormularioProductosComponent,
+    CatalogoComponent,
+    DashboardAdminComponent,
+    ListaUsuariosComponent,
     
   ],
   imports: [
