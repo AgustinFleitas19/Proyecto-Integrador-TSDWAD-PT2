@@ -8,7 +8,7 @@
 
 <div class="formulario">
     <h1>Ingresá</h1>
-    <form [formGroup]="formularioLogin" (ngSubmit)="LogIn()">
+    <form [formGroup]="formularioLogin" (ngSubmit)="LogIn($event)">
         <div class="username">
             <input type="text" name="email" formControlName="email">
             <label for="email">Correo electronico</label>
@@ -32,9 +32,10 @@
         </div>
         <div class="recordar">¿Olvido su contraseña?</div>
         <input type="submit" value="Entrar">
-        <div class="registrarse">
-            ¿No tienes cuenta? →  <a href="#" routerLink="/register">registro</a>
-        </div>
-    </form>
+        <!--<div class="registrarse">
+            ¿No tienes cuenta? →  <a href="#" (click)="LogOut">Logout</a>
+        </div>-->
+        </form>
+    
 </div>
 </section>

@@ -12,12 +12,14 @@ import { LoginComponent } from './login/login.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { FormularioProductosComponent } from './pages/formulario-productos/formulario-productos.component';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
-import { DashboardAdminComponent } from './pages/dashboard-admin/dashboard-admin.component';
 import { ListaUsuariosComponent } from './pages/lista-usuarios/lista-usuarios.component';
+import { AuthGuard } from './auth/auth.guard';
+import { ListaProductosComponent } from './pages/lista-productos/lista-productos.component';
+import { EditarProductoComponent } from './pages/editar-producto/editar-producto.component';
 
 
 const routes: Routes = [
-  { path:"", redirectTo:'/inicio', pathMatch: 'full'},
+  {path:"", redirectTo:'/inicio', pathMatch: 'full'},
   {path: 'inicio', component: MainComponent},
   { path: 'register', component: RegisterComponent},
   {path: 'destinos', component:CatalogoComponent},
@@ -26,21 +28,18 @@ const routes: Routes = [
   
 
 
-  { path: 'dashboard', component: DashboardComponent,
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard],
 
 children:[
 
-   {path: 'perfil', component: MiPerfilComponent},
-   {path: 'boletos', component: BoletosComponent},
-   {path: 'favoritos', component: FavoritosComponent},
-   {path: 'metodos-de-pago', component: MetodosDePagoComponent},
+  {path: 'perfil', component: MiPerfilComponent},
+  { path: 'crear-producto', component: FormularioProductosComponent},
+  { path: 'lista-usuarios', component: ListaUsuariosComponent},
+  { path: 'lista-productos', component: ListaProductosComponent},
+  { path: 'editar-producto/:id', component: EditarProductoComponent},
 
   ]},
-  {path: 'admin', component: DashboardAdminComponent,
-  children:[
-    { path: 'crear-producto', component: FormularioProductosComponent},
-    { path: 'lista-usuarios', component: ListaUsuariosComponent},
-  ]}
+ 
 ];
 
 @NgModule({

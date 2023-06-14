@@ -1,6 +1,6 @@
 
 <div class="form-container">
-    <form class="centered" [formGroup]="formularioProducto" (ngSubmit)="crearProducto()">
+    <form class="centered" [formGroup]="editarProductoFormulario" (ngSubmit)="editarProducto()">
       <div class="form">
         <div class="row mb-3">
         <div class="col">
@@ -61,7 +61,7 @@
                 </div>
         </div>
         <div>
-        <button class="btn btn-primary" type="submit">Crear Producto</button>
+        <button class="btn btn-primary" type="submit">Editar</button>
         </div>
       </div>
     </form>

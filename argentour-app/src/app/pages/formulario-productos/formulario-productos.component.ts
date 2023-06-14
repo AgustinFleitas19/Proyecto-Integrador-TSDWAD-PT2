@@ -55,7 +55,7 @@ export class FormularioProductosComponent {
       this.productosService.crearProducto(this.formularioProducto.value).subscribe(
         {next: (productoData:any) =>{
           console.log(productoData);
-          ;
+          
         },
         error: (errorData:any) => {
           console.error(errorData);

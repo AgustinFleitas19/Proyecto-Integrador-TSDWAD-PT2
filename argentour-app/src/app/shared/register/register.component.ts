@@ -70,7 +70,7 @@ export class RegisterComponent{
       this.usuarioService.crearUsuario(this.formularioRegistro.value).subscribe(
         {next: (usuarioData:any) =>{
           console.log(usuarioData);
-          this.router.navigateByUrl('/dashboard/perfil');
+          this.router.navigateByUrl('/login');
         },
         error: (errorData:any) => {
           console.error(errorData);

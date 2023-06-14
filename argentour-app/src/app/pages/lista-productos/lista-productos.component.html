@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Usuario</th>
+        <th scope="col">Email</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of listaProductos">
+        <th scope="row">{{producto.id_Producto}}</th>
+        <td>{{producto.nombre}} </td>
+        <td>{{producto.precio}} </td>
+        <td>{{producto.cantidad}} </td>
+        <td>{{producto.descripcion}} </td>
+        <td>{{producto.imagen}} </td>
+        <td><button class="btn btn-primary" (click)="editarProducto(producto.id_Producto)">Editar</button></td>
+        <td><button class="btn btn-primary" (click)="borrarProducto(producto.id_Producto)">Borrar</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <button routerLink="/dashboard/crear-producto">Agregar producto</button>
+
