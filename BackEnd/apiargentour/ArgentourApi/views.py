@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render
 
 from django.contrib.auth import authenticate, login, logout
 from rest_framework import status, generics
@@ -10,6 +11,7 @@ from rest_framework.permissions import IsAdminUser, AllowAny, IsAuthenticated
 from .serializers import ProductoSerializer
 from .serializers import CategoriaSerializer
 from rest_framework import viewsets
+from rest_framework_simplejwt.tokens import RefreshToken
 
 
 class LoginView(APIView):
@@ -22,8 +24,10 @@ class LoginView(APIView):
         # Si es correcto añadimos a la request la información de sesión
         if user:
             login(request, user)
+            refresh = RefreshToken.for_user(user)
             return Response(
-                UserSerializer(user).data,
+                {'token': str(refresh.access_token),
+                 'is_staff': user.is_staff},
                 status=status.HTTP_200_OK)
         # Si no es correcto devolvemos un error en la petición
         return Response(
@@ -80,3 +84,42 @@ class ListarUsuarios(generics.ListCreateAPIView):
         if self.request.user.is_authenticated:
             return Response(serializer.data)
 
+class EliminarProducto(APIView):
+    permission_classes = [IsAdminUser]
+    def delete(self, request, pk, format=None):
+        try:
+            producto = Producto.objects.get(pk=pk)
+        except Producto.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        producto.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+class ModificarProducto(APIView):
+    permission_classes = [IsAdminUser]
+
+    def patch(self, request, pk, format=None):
+        try:
+            producto = Producto.objects.get(pk=pk)
+        except Producto.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        serializer = ProductoSerializer(producto, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+class ObtenerProducto(APIView):
+    permission_classes = [AllowAny]
+
+    def get(self, request, pk, format=None):
+        try:
+            producto = Producto.objects.get(pk=pk)
+        except Producto.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        serializer = ProductoSerializer(producto)
+        return Response(serializer.data)
+
+    

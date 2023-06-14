@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -82,7 +83,7 @@ WSGI_APPLICATION = 'apiargentour.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'argentourapi',
+        'NAME': 'argentourapiprueba',
         'USER': 'root',
         'PASSWORD': 'TRINI1234',
         'HOST': 'localhost',
@@ -140,10 +141,13 @@ AUTH_USER_MODEL = "ArgentourApi.CustomUser"
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.SessionAuthentication',
+        
+        
     ],
     'DEFAULT_PERMISSION_CLASSES': [
+        
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
         'rest_framework.permissions.IsAuthenticated',
         'rest_framework.permissions.IsAdminUser',
@@ -151,5 +155,5 @@ REST_FRAMEWORK = {
   
 }
 
-CORS_ORIGIN_WHITELIST = ["http://localhost:3306", "http://localhost:4200"]
+CORS_ORIGIN_WHITELIST = ["http://localhost:4200"]
 CORS_ALLOW_CREDENTIALS = True
