@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductosService } from 'src/app/servicios/productos/productos.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { ProductosService } from 'src/app/servicios/productos/productos.service'
 export class CatalogoComponent {
 
   productosList:any;
-  constructor(private productosService: ProductosService){
+  constructor(private productosService: ProductosService,
+    private router: Router){
 
     this.productosService.obtenerProductos().subscribe(
       {next: (productosData) =>{
@@ -22,5 +24,8 @@ export class CatalogoComponent {
     });
   }
 
+  verDetalles(id:number){
+    this.router.navigate(['producto-details', id])
+  }
 
 }

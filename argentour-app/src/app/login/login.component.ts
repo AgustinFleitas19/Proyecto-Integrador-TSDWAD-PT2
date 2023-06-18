@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from '../servicios/login/login.service';
+import { AuthService } from '../servicios/auth/auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent {
   constructor(
     private formBuilder: FormBuilder,
     private router:Router,
-    private loginService: LoginService,
+    private authService: AuthService,
     ){
 
     this.formularioLogin= this.formBuilder.group(
@@ -34,12 +35,15 @@ export class LoginComponent {
     return this.formularioLogin.get("password");
   }
 
-  LogIn(){
+  LogIn(event: Event){
+
+    event.preventDefault();
 
     if (this.formularioLogin.valid){
-      this.loginService.Login(this.formularioLogin.value).subscribe(
+      console.log("Formulario valido")
+      this.authService.login(this.formularioLogin.value).subscribe(
         {next: (loginData:any) =>{
-          console.log(loginData);
+          console.log('DATA' + JSON.stringify(loginData));
           this.router.navigateByUrl('/dashboard/perfil');
         },
         error: (errorData:any) => {
@@ -54,5 +58,13 @@ export class LoginComponent {
       this.formularioLogin.markAllAsTouched();
     }
   }
+  
+  
+  LogOut(){
+    this.authService.logout()
+    console.log("Cerraste sesión");
     
+  }
+
+
 }

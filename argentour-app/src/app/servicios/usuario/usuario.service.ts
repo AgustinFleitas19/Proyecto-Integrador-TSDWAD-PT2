@@ -22,10 +22,16 @@ export class UsuarioService {
   crearUsuario(body:any): Observable <any>{
     return this.http.post(this.url + "auth/registro/", body);
    }
-
-  actualizarUsuario(body:any): Observable<any>{
-    return this.http.put(this.url+ "user/profile/", body)
+  obtenerUsuario(id:number):Observable <any>{
+    return this.http.get(`${this.url}usuario/${id}/`)
   }
 
+  actualizarUsuario(body:any, id:number): Observable<any>{
+    return this.http.patch(`${this.url}actualizarusuario/${id}/`, body)
+  }
+ 
+eliminarUsuario(id:number):Observable<any>{
+  return this.http.delete(`${this.url}usuarios/${id}/`)
+}
 
 }

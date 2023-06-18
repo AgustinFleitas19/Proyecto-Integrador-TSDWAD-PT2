@@ -1,0 +1,10 @@
+<div class="card" style="width: 18rem;">
+    <img src="{{this.datosProducto.imagen}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{this.datosProducto.nombre}}.</h5>
+      <p class="card-text">{{this.datosProducto.descripcion}}</p>
+      <p class="card-text">Stock:{{this.datosProducto.cantidad}}</p>
+      
+      <a class="btn btn-primary"(click)="comprarProducto(this.datosProducto.id_Producto)">Comprar</a>
+    </div>
+  </div>

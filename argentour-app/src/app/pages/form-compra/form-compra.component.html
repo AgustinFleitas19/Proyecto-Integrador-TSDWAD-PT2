@@ -1,0 +1,88 @@
+<div class="container-md">
+    <div class="card" style="width: 18rem;">
+        <img src="{{this.datosProducto.imagen}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{this.datosProducto.nombre}}</h5>
+          <p class="card-text">{{this.datosProducto.descripcion}}</p>
+          <p class="card-text">Stock:{{this.datosProducto.cantidad}}</p>
+          <h5 class="card-title">{{this.datosProducto.precio | currency}}</h5>
+          
+          <!--<a class="btn btn-primary"(click)="comprarProducto()">Comprar</a>-->
+        </div>
+      </div>
+
+      
+<div class="form-container">
+    <form class="centered" [formGroup]="formularioCompra" (ngSubmit)="Comprar(this.datosProducto.id_Producto, this.formularioCompra.value)">
+      <div class="form">
+        <div class="row mb-3">
+        <div class="col">
+          <label for="nombre">Nombre:</label>
+          <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Nombre" >
+        </div>
+        <div *ngIf="Nombre?.errors && Nombre?.touched">
+          <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+            Campo requerido
+          </p>
+        </div>
+        <div class="col">
+          <label for="apellido">Apellido:</label>
+          <input type="text" class="form-control" id="apellido" formControlName="apellido" placeholder="Apellido">
+          <div *ngIf="Apellido?.errors && Apellido?.touched">
+            <p *ngIf="Apellido?.hasError('required')" class="text-danger">
+              Campo requerido
+            </p>
+          </div>
+        </div>
+        </div>
+        <div class="row mb-3" >
+          <div class="col">
+            <label for="dni">DNI:</label>
+              <input type="text" class="form-control" id="dni" formControlName="dni" placeholder="xx xxx xxx">
+              <div *ngIf="Dni?.errors && Dni?.touched">
+                <p *ngIf="Dni?.hasError('required')" class="text-danger">
+                  Campo requerido
+                </p>
+              </div>
+            </div>
+          <div class="col">
+            <label for="correo">Email:</label>
+              <input type="email" class="form-control" id="correo" formControlName="email" placeholder="email">
+              <div *ngIf="Email?.errors && Email?.touched">
+                <p *ngIf="Email?.hasError('required')" class="text-danger">
+                  Campo requerido
+                </p>
+                <p *ngIf="Email?.hasError('email')" class="text-danger">
+                  No es un formato de correo Válido
+                </p>
+      
+              </div>
+              
+            </div>
+            <div class="col">
+              <label for="cantidad">Cantidad:</label>
+                <input type="text" class="form-control" id="cantidad" formControlName="cantidad">
+                <div *ngIf="Cantidad?.errors && Cantidad?.touched">
+                  <p *ngIf="Cantidad?.hasError('required')" class="text-danger">
+                    Campo requerido
+                  </p>
+                </div>
+              </div>
+          
+        </div>
+        <div>
+        <button class="btn btn-primary" type="submit">Comprar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="anunciodecompra" *ngIf="compraExitosa" >
+    <h5>¡Tu pedido fue <span>{{this.response.respuesta}}!</span></h5>
+    <p>Para confirmar tu compra realiza una transferencia bancaria al CBU: <span>{{this.response.cbu}}</span></p>
+    <p>Y envianos comprobante al Whatsapp: <span>{{this.response.telefono}}</span></p>
+
+  </div>
+
+    
+
+</div>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -20,8 +20,15 @@ import { LoginComponent } from './login/login.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { FormularioProductosComponent } from './pages/formulario-productos/formulario-productos.component';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
-import { DashboardAdminComponent } from './pages/dashboard-admin/dashboard-admin.component';
 import { ListaUsuariosComponent } from './pages/lista-usuarios/lista-usuarios.component';
+import { UsuarioService } from './servicios/usuario/usuario.service';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { ErrorInterceptor } from './auth/error.interceptor';
+import { ListaProductosComponent } from './pages/lista-productos/lista-productos.component';
+import { EditarProductoComponent } from './pages/editar-producto/editar-producto.component';
+import { ProductoDetailsComponent } from './pages/producto-details/producto-details.component';
+import { FormCompraComponent } from './pages/form-compra/form-compra.component';
+import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
 
 
 
@@ -42,8 +49,12 @@ import { ListaUsuariosComponent } from './pages/lista-usuarios/lista-usuarios.co
     CarritoComponent,
     FormularioProductosComponent,
     CatalogoComponent,
-    DashboardAdminComponent,
     ListaUsuariosComponent,
+    ListaProductosComponent,
+    EditarProductoComponent,
+    ProductoDetailsComponent,
+    FormCompraComponent,
+    EditarUsuarioComponent,
     
   ],
   imports: [
@@ -54,7 +65,14 @@ import { ListaUsuariosComponent } from './pages/lista-usuarios/lista-usuarios.co
     
 
   ],
-  providers: [],
+  providers: [UsuarioService,
+  
+    
+  {provide: HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true},
+  {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true},
+],
+
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

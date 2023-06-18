@@ -13,6 +13,8 @@ export class MiPerfilComponent {
     this.usuarioServicio.obtenerPerfil().subscribe(
       {next: (perfilData) =>{
         this.usuario = perfilData;
+        console.log(this.usuario);
+        
       },
       error: (errorData) => {
         console.error(errorData);

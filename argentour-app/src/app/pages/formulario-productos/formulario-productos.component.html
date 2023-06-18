@@ -25,7 +25,7 @@
         <div class="row mb-3" >
           <div class="col">
             <label for="imagen-producto">Subir imagen:</label>
-              <input type="file" class="form-control" id="imagen-producto" formControlName="imagen" placeholder="Subir imagen" accept=".jpg,.png">
+              <input type="text" class="form-control" id="imagen-producto" formControlName="imagen" placeholder="URL imagen">
               <div *ngIf="Imagen?.errors && Imagen?.touched">
                 <p *ngIf="Imagen?.hasError('required')" class="text-danger">
                   Campo requerido
@@ -65,5 +65,8 @@
         </div>
       </div>
     </form>
+    <div class="alert alert-success" role="alert" *ngIf="productoCreado">
+      Producto creado con éxito
+    </div>
   </div>
   

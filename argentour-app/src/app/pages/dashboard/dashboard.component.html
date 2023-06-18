@@ -1,11 +1,10 @@
 <div class="dashboard-container">
     <nav class="dashboard">
         <ul class="dashboard-nav">
-
-            <li><a routerLink="/dashboard/perfil">Mi perfil</a></li>
-            <li><a routerLink="/dashboard/boletos">Mis boletos</a></li>
-            <li><a routerLink="/dashboard/favoritos">Favoritos</a></li>
-            <li><a routerLink="/dashboard/metodos-de-pago">Métodos de pago</a></li>
+            <li><a routerLink="/dashboard/lista-usuarios" *ngIf="isAdmin">Ver Usuarios</a></li>
+            <li><a routerLink="/dashboard/lista-productos" *ngIf="isAdmin">Agregar Productos</a></li>
+            <li><a routerLink="/dashboard/perfil" *ngIf="!isAdmin">Mi perfil</a></li>
+            <li><button (click)="LogOut()">Salir</button></li>
 
         </ul>
     </nav>
