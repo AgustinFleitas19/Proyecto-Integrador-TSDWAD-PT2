@@ -40,6 +40,11 @@ export class ProductosService {
       this.producto= this.http.get(this.url+ "producto/" + id)
       return this.producto
      }
+
+    pagoRealizado(){
+      const respuesta= this.http.get(this.url + "pago")
+      return respuesta
+    } 
   
   }
   

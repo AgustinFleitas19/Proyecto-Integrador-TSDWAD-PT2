@@ -16,6 +16,9 @@ import { ListaUsuariosComponent } from './pages/lista-usuarios/lista-usuarios.co
 import { AuthGuard } from './auth/auth.guard';
 import { ListaProductosComponent } from './pages/lista-productos/lista-productos.component';
 import { EditarProductoComponent } from './pages/editar-producto/editar-producto.component';
+import { ProductoDetailsComponent } from './pages/producto-details/producto-details.component';
+import { FormCompraComponent } from './pages/form-compra/form-compra.component';
+import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
 
 
 const routes: Routes = [
@@ -25,6 +28,8 @@ const routes: Routes = [
   {path: 'destinos', component:CatalogoComponent},
   { path: 'login', component: LoginComponent},
   { path: 'carrito', component: CarritoComponent},
+  { path: 'producto-details/:id', component: ProductoDetailsComponent},
+  { path: 'comprar/:id', component: FormCompraComponent},
   
 
 
@@ -37,6 +42,7 @@ children:[
   { path: 'lista-usuarios', component: ListaUsuariosComponent},
   { path: 'lista-productos', component: ListaProductosComponent},
   { path: 'editar-producto/:id', component: EditarProductoComponent},
+  { path: 'editar-usuario/:id', component: EditarUsuarioComponent},
 
   ]},
  

@@ -12,8 +12,12 @@
         <th scope="row">{{usuario.id}}</th>
         <td>{{usuario.username}} </td>
         <td>{{usuario.email}} </td>
-        <td><button class="btn btn-primary">Ver detalles</button></td>
-      </tr>
-      
+        <td><button class="btn btn-primary" (click)="editarUsuario(usuario.id)">Editar</button></td>
+        <td><button class="btn btn-primary" (click)="borrarUsuario(usuario.id)">Eliminar</button></td>
+      </tr>      
     </tbody>
+
+    <div class="alert alert-success" role="alert" *ngIf="usuarioDeleted">
+      El usuario se borró con éxito
+    </div>
   </table>

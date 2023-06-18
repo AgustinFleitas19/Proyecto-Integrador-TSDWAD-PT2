@@ -9,6 +9,7 @@ import { ProductosService } from 'src/app/servicios/productos/productos.service'
 })
 export class FormularioProductosComponent {
   formularioProducto;
+  productoCreado: boolean= false;
   
 
   constructor(
@@ -55,6 +56,8 @@ export class FormularioProductosComponent {
       this.productosService.crearProducto(this.formularioProducto.value).subscribe(
         {next: (productoData:any) =>{
           console.log(productoData);
+          this.productoCreado= true;
+
           
         },
         error: (errorData:any) => {

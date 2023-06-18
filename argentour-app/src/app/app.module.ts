@@ -26,6 +26,9 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { ErrorInterceptor } from './auth/error.interceptor';
 import { ListaProductosComponent } from './pages/lista-productos/lista-productos.component';
 import { EditarProductoComponent } from './pages/editar-producto/editar-producto.component';
+import { ProductoDetailsComponent } from './pages/producto-details/producto-details.component';
+import { FormCompraComponent } from './pages/form-compra/form-compra.component';
+import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
 
 
 
@@ -49,6 +52,9 @@ import { EditarProductoComponent } from './pages/editar-producto/editar-producto
     ListaUsuariosComponent,
     ListaProductosComponent,
     EditarProductoComponent,
+    ProductoDetailsComponent,
+    FormCompraComponent,
+    EditarUsuarioComponent,
     
   ],
   imports: [

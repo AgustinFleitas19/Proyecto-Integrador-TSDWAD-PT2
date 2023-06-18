@@ -3,10 +3,10 @@
     <div class="contenedor-items">
         <div class="item" *ngFor="let producto of productosList">
             <span class="titulo-item">{{producto.nombre}}.</span>
-            <img src="imagenes.css/terminal-de-retiro-bs.jpeg" alt="" class="img-item">
+            <img src= "{{producto.imagen}}" alt="" class="img-item">
             <span class="precio-item">{{producto.precio | currency}}</span>
             <p class="descripcion">{{producto.descripcion}}</p>
-            <button class="boton-item">Agregar al Carrito</button>
+            <button class="boton-item" (click)="verDetalles(producto.id_Producto)">Comprar</button>
         </div>
     </div>
 </section>

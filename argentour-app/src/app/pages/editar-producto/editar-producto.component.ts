@@ -13,6 +13,7 @@ export class EditarProductoComponent implements OnInit{
   editarProductoFormulario;
   datosProducto:any;
   productoId:any;
+  cambiosGuardados:boolean= false;
 
   constructor(
     private activerouter: ActivatedRoute,
@@ -82,6 +83,7 @@ ngOnInit(): void {
       this.productosService.actualizarProducto(this.editarProductoFormulario.value,this.productoId).subscribe(
         {next: (productoData:any) =>{
           console.log(productoData);
+          this.cambiosGuardados= true;
     
         },
         error: (errorData:any) => {
