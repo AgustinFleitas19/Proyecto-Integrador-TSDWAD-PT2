@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'apiargentour.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'argentourapiprueba',
+        'NAME': 'argentourapifinal',
         'USER': 'root',
         'PASSWORD': 'TRINI1234',
         'HOST': 'localhost',

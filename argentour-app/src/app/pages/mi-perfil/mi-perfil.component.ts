@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/servicios/usuario/usuario.service';
 
 @Component({
@@ -8,7 +9,8 @@ import { UsuarioService } from 'src/app/servicios/usuario/usuario.service';
 })
 export class MiPerfilComponent {
   usuario:any;
-  constructor(private usuarioServicio:UsuarioService){
+  constructor(private usuarioServicio:UsuarioService,
+    private router: Router){
 
     this.usuarioServicio.obtenerPerfil().subscribe(
       {next: (perfilData) =>{
@@ -22,6 +24,10 @@ export class MiPerfilComponent {
       }
     });
 
+  }
+
+  editarPerfil(id:number){
+    this.router.navigate(['dashboard/editar-usuario', id])
   }
 
 }

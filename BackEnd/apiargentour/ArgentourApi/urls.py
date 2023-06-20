@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import EliminarProducto, LoginView, LogoutView, ModificarProducto, ObtenerProducto, SignupView, ProfileView, ListarUsuarios, agregarProducto
+from .views import EliminarProducto, EliminarUsuarioView, LoginView, LogoutView, ModificarProducto, ModificarUsuario, ObtenerProducto, ObtenerUsuarioView, Pagado, SignupView, ProfileView, ListarUsuarios, agregarProducto
 
 urlpatterns = [
     # Auth views
@@ -23,5 +23,10 @@ urlpatterns = [
         ModificarProducto.as_view(), name='modificar_producto'),     
     path('productos/<int:pk>/',
           EliminarProducto.as_view(), name='eliminar_producto'),
-    path('producto/<int:pk>/', ObtenerProducto.as_view(), name='obtener_producto')
+    path('producto/<int:pk>/', ObtenerProducto.as_view(), name='obtener_producto'),
+    path('usuarios/<int:id>/', EliminarUsuarioView.as_view(), name='eliminar_usuario'),
+    path('usuario/<int:id>/', ObtenerUsuarioView.as_view(), name='obtener_usuario'),
+    path('actualizarusuario/<int:pk>/', ModificarUsuario.as_view(), name='actualizar_usuario'),
+    path('pago', Pagado.as_view(), name='pagado')
+    
 ]

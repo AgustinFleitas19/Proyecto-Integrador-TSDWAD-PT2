@@ -18,9 +18,12 @@ constructor(private formBuilder:FormBuilder,
 private activerouter: ActivatedRoute,
 private usuarioService: UsuarioService){
 this.editarUsuarioForm= this.formBuilder.group({
-  email:["", [Validators.required, Validators.email]],
+  first_name: ["", [Validators.required]],
+  last_name: ["", [Validators.required]],
   username: ["", [Validators.required]],
-  password: ["", [Validators.required, Validators.minLength(8)]],
+  dni: ["", [Validators.required]],
+  tel:["", [Validators.required]]
+  
 })
 }
 
@@ -32,9 +35,12 @@ ngOnInit(): void {
     this.datosUsuario= data;
   //completamos form con los datos obtenidos del usuario segun su ID
   this.editarUsuarioForm.setValue({
-    "email": this.datosUsuario.email,
-    "password": this.datosUsuario.password,
-    "username": this.datosUsuario.username
+    "first_name": this.datosUsuario.first_name,
+    "last_name": this.datosUsuario.last_name,
+    "username": this.datosUsuario.username,
+    "dni": this.datosUsuario.dni,
+    "tel": this.datosUsuario.tel
+    
   })
   
   
@@ -43,8 +49,11 @@ ngOnInit(): void {
   
 }
 
-  get Correo(){
-    return this.editarUsuarioForm.get("email")
+  get Nombre(){
+    return this.editarUsuarioForm.get("first_name")
+  }
+  get Apellido(){
+    return this.editarUsuarioForm.get("last_name")
   }
 
   get Usuario(){
@@ -52,14 +61,19 @@ ngOnInit(): void {
   }
 
 
-  get Password (){
-    return this.editarUsuarioForm.get("password")
+  get Dni (){
+    return this.editarUsuarioForm.get("dni")
+  }
+  get Telefono (){
+    return this.editarUsuarioForm.get("tel")
   }
 
 
   editarUsuario(){
     if (this.editarUsuarioForm.valid){
-     let productoid = this.activerouter.snapshot.paramMap.get('id')
+      console.log(this.usuarioId);
+      
+     
        this.usuarioService.actualizarUsuario(this.editarUsuarioForm.value,this.usuarioId).subscribe(
          {next: (usuarioData:any) =>{
            console.log(usuarioData);

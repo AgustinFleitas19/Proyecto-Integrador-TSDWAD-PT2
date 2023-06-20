@@ -23,11 +23,13 @@ export class UsuarioService {
     return this.http.post(this.url + "auth/registro/", body);
    }
   obtenerUsuario(id:number):Observable <any>{
-    return this.http.get(`${this.url}usuario/${id}/`)
+    const options = { withCredentials: true };
+    return this.http.get(`${this.url}usuario/${id}/`, options)
   }
 
   actualizarUsuario(body:any, id:number): Observable<any>{
-    return this.http.patch(`${this.url}actualizarusuario/${id}/`, body)
+    const options = { withCredentials: true };
+    return this.http.patch(`${this.url}actualizarusuario/${id}/`, body, options)
   }
  
 eliminarUsuario(id:number):Observable<any>{
