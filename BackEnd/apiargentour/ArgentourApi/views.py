@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, get_user_model
 from rest_framework import status, generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -45,6 +45,34 @@ class LogoutView(APIView):
 class SignupView(generics.CreateAPIView):
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
+
+class EliminarUsuarioView(generics.DestroyAPIView):
+    queryset = get_user_model().objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [IsAdminUser]
+    lookup_field = 'id'
+
+class ObtenerUsuarioView(generics.RetrieveAPIView):
+    queryset = get_user_model().objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated]
+    lookup_field = 'id'
+
+class ModificarUsuario(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def patch(self, request, pk, format=None):
+        User = get_user_model()
+        try:
+            usuario = User.objects.get(pk=pk)
+        except User.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        serializer = UserSerializer(usuario, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class verProductos(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny] 
@@ -96,7 +124,7 @@ class EliminarProducto(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class ModificarProducto(APIView):
-    permission_classes = [IsAdminUser]
+    permission_classes = [IsAuthenticated]
 
     def patch(self, request, pk, format=None):
         try:
@@ -123,3 +151,9 @@ class ObtenerProducto(APIView):
         return Response(serializer.data)
 
     
+class Pagado(APIView):  # Retornar custom json 
+    permission_classes = [AllowAny]
+    def get(self, request):
+        return Response({"respuesta": "aprobado",
+                         "cbu": "xxxx-xxxxx-x111",
+                         "telefono":"xxxx-xxx000"})

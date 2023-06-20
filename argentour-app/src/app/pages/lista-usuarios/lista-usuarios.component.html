@@ -4,6 +4,10 @@
         <th scope="col">Id</th>
         <th scope="col">Usuario</th>
         <th scope="col">Email</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">DNI</th>
+        <th scope="col">Tel</th>
        
       </tr>
     </thead>
@@ -12,8 +16,12 @@
         <th scope="row">{{usuario.id}}</th>
         <td>{{usuario.username}} </td>
         <td>{{usuario.email}} </td>
-        <td><button class="btn btn-primary" (click)="editarUsuario(usuario.id)">Editar</button></td>
-        <td><button class="btn btn-primary" (click)="borrarUsuario(usuario.id)">Eliminar</button></td>
+        <td>{{usuario.first_name}} </td>
+        <td>{{usuario.last_name}} </td>
+        <td>{{usuario.dni}} </td>
+        <td>{{usuario.tel}} </td>
+        <td><button class="btn btn-info" (click)="editarUsuario(usuario.id)">Editar</button></td>
+        <td><button class="btn btn-warning" (click)="borrarUsuario(usuario.id)">Eliminar</button></td>
       </tr>      
     </tbody>
 

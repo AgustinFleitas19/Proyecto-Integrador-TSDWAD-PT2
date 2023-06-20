@@ -4,7 +4,7 @@
             <li><a routerLink="/dashboard/lista-usuarios" *ngIf="isAdmin">Ver Usuarios</a></li>
             <li><a routerLink="/dashboard/lista-productos" *ngIf="isAdmin">Agregar Productos</a></li>
             <li><a routerLink="/dashboard/perfil" *ngIf="!isAdmin">Mi perfil</a></li>
-            <li><button (click)="LogOut()">Salir</button></li>
+            <li><button class="btn btn-info" (click)="LogOut()">Salir</button></li>
 
         </ul>
     </nav>

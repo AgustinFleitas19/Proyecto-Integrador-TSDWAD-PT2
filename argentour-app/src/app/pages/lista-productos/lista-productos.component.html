@@ -4,6 +4,9 @@
         <th scope="col">Id</th>
         <th scope="col">Nombre</th>
         <th scope="col">Precio</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Desc.</th>
+        <th scope="col">Imagen</th>
        
       </tr>
     </thead>
@@ -15,11 +18,11 @@
         <td>{{producto.cantidad}} </td>
         <td>{{producto.descripcion}} </td>
         <td>{{producto.imagen}} </td>
-        <td><button class="btn btn-primary" (click)="editarProducto(producto.id_Producto)">Editar</button></td>
-        <td><button class="btn btn-primary" (click)="borrarProducto(producto.id_Producto)">Borrar</button></td>
+        <td><button class="btn btn-info" (click)="editarProducto(producto.id_Producto)">Editar</button></td>
+        <td><button class="btn btn-warning" (click)="borrarProducto(producto.id_Producto)">Borrar</button></td>
       </tr>
       
     </tbody>
   </table>
-  <button routerLink="/dashboard/crear-producto">Agregar producto</button>
+  <button class="btn btn-primary" routerLink="/dashboard/crear-producto">Agregar producto</button>
 

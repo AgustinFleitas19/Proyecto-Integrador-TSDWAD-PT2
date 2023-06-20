@@ -9,9 +9,9 @@
             
             <div class="modal-body">
                 <form [formGroup]="formularioRegistro" (ngSubmit)="registrarUsuario()">
-               <!-- <div class="form-group">
+               <div class="form-group">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre" formControlName="name">
+                    <input type="text" class="form-control" id="nombre" formControlName="first_name">
                 </div>
                 <div *ngIf="Nombre?.errors  && Nombre?.touched" >
                     <p *ngIf="Nombre?.hasError('required')" class="text-danger">
@@ -21,14 +21,14 @@
 
                 <div class="form-group">
                     <label for="nombre">Apellido:</label>
-                    <input type="text" name="apellido" class="form-control" formControlName="surname">    
+                    <input type="text" name="apellido" class="form-control" formControlName="last_name">    
                 </div>
                 <div *ngIf="Apellido?.errors  && Apellido?.touched" >
                     <p *ngIf="Apellido?.hasError('required')" class="text-danger">
                     Este campo es requerido
                     </p>
                 </div>
-            -->
+            
                 <div class="form-group">
                     <label for="email">Correo electrónico:</label>
                     <input type="email" class="form-control" id="email" formControlName="email">

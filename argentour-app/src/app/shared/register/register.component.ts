@@ -25,24 +25,23 @@ export class RegisterComponent{
 
     this.formularioRegistro= this.formBuilder.group(
       {
-        ///name:["", [Validators.required]],
-       /// surname: ["", [Validators.required]],
+        first_name:["", [Validators.required]],
+        last_name: ["", [Validators.required]],
         email:["", [Validators.required, Validators.email]],
         username: ["", [Validators.required]],
         password: ["", [Validators.required, Validators.minLength(8)]],
-        ///provincia: ["", [Validators.required]],
-        ///ciudad: ["", [Validators.required]],
+      
       }
     )
 
   }
 
-  /*get Nombre(){
-    return this.formularioRegistro.get("name")
+  get Nombre(){
+    return this.formularioRegistro.get("first_name")
   }
   get Apellido(){
-    return this.formularioRegistro.get("surname")
-  }*/
+    return this.formularioRegistro.get("last_name")
+  }
 
   get Correo(){
     return this.formularioRegistro.get("email")
@@ -67,6 +66,9 @@ export class RegisterComponent{
 
   registrarUsuario(){
     if (this.formularioRegistro.valid){
+      console.log(this.formularioRegistro.value);
+      
+  
       this.usuarioService.crearUsuario(this.formularioRegistro.value).subscribe(
         {next: (usuarioData:any) =>{
           console.log(usuarioData);

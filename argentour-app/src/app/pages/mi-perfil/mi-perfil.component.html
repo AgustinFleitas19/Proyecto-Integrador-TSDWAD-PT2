@@ -7,6 +7,7 @@
         <div class="account-info">
             <h2>Datos de la cuenta</h2>
             <ul>
+                <li>Id: {{this.usuario.id}}</li>
                 <li>Correo: {{this.usuario.email}}</li>
                 <li>Usuario: {{this.usuario.username}} </li>    
             </ul>
@@ -15,12 +16,12 @@
         <div class="personal-info">
             <h2>Datos personales</h2>
             <ul>
-                <li>Nombre Completo: </li>
-                <li>Apellido: </li> 
-                <li>Ciudad: </li>
-                <li>Documento: </li>
-                <li>Teléfono: </li>   
+                <li>Nombre Completo: {{this.usuario.first_name}} </li>
+                <li>Apellido:  {{this.usuario.last_name}} </li> 
+                <li>Documento: {{this.usuario.dni}}</li>
+                <li>Teléfono: {{this.usuario.tel}}</li>   
             </ul>
         </div>
+        <button class="btn btn-primary" (click)="editarPerfil(usuario.id)">Editar perfil</button>
     </div>
 </div>

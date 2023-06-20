@@ -3,9 +3,9 @@
             
             <div class="form-body">
                 <form [formGroup]="editarUsuarioForm" (ngSubmit)="editarUsuario()">
-               <!-- <div class="form-group">
+               <div class="form-group">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre" formControlName="name">
+                    <input type="text" class="form-control" id="nombre" formControlName="first_name">
                 </div>
                 <div *ngIf="Nombre?.errors  && Nombre?.touched" >
                     <p *ngIf="Nombre?.hasError('required')" class="text-danger">
@@ -15,26 +15,15 @@
 
                 <div class="form-group">
                     <label for="nombre">Apellido:</label>
-                    <input type="text" name="apellido" class="form-control" formControlName="surname">    
+                    <input type="text" name="apellido" class="form-control" formControlName="last_name">    
                 </div>
                 <div *ngIf="Apellido?.errors  && Apellido?.touched" >
                     <p *ngIf="Apellido?.hasError('required')" class="text-danger">
                     Este campo es requerido
                     </p>
                 </div>
-            -->
-                <div class="form-group">
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" class="form-control" id="email" formControlName="email">
-                </div>
-                <div *ngIf="Correo?.errors && Correo?.touched">
-                    <p *ngIf="Correo?.hasError('required')" class="text-danger">
-                       Este campo es requerido 
-                    </p>
-                    <p *ngIf="Correo?.hasError('email')" class="text-danger">
-                        El formato de email debe ser válido
-                    </p>
-                </div>
+            
+                
                  
                 <div class="form-group">
                     <label for="usuario">Usuario:</label>
@@ -46,43 +35,34 @@
                     </p>
                 </div>
                  
+                
                 <div class="form-group">
-                    <label for="password">Contraseña:</label>
-                    <input type="password" class="form-control" id="password" formControlName="password">
-                </div>
-                <div *ngIf="Password?.errors && Password?.touched">
-                    <p *ngIf="Password?.hasError('required')" class="text-danger">
-                        Este campo es requerido
-                    </p>
-                    <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
-                        El password debe ser de 8 o más caracteres
-                    </p>
-                </div>
-            <!--  
-                <div class="form-group">
-                    <label for="provincia">Provincia:</label>
-                    <input type="text" class="form-control" id="provincia" formControlName="provincia">
+                    <label for="dni">DNI:</label>
+                    <input type="text" class="form-control" id="dni" formControlName="dni">
                 </div>   
-                <div *ngIf="Provincia?.errors  && Provincia?.touched" >
-                    <p *ngIf="Provincia?.hasError('required')" class="text-danger">
+                <div *ngIf="Dni?.errors  && Dni?.touched" >
+                    <p *ngIf="Dni?.hasError('required')" class="text-danger">
                     Este campo es requerido
                     </p>
                 </div>
                 <div class="form-group">
-                    <label for="ciudad">Ciudad:</label>
-                    <input type="text" class="form-control" id="ciudad" formControlName="ciudad">
+                    <label for="tel">Teléfono:</label>
+                    <input type="text" class="form-control" id="tel" formControlName="tel">
                 </div>
-                <div *ngIf="Ciudad?.errors && Ciudad?.touched">
-                    <p *ngIf="Ciudad?.hasError('required')" class="text-danger">
+                <div *ngIf="Telefono?.errors && Telefono?.touched">
+                    <p *ngIf="Telefono?.hasError('required')" class="text-danger">
                         Este campo es requerido
                     </p>
                 </div>
-        -->  
+          
                 <div class="boton">
                     <!-- <button type="button" class="btn btn-warning" data-dismiss="modal" id="closeModal" (click)="onClose()" #closebutton>Cerrar</button> -->
                     <button type="submit" class="btn btn-warning">Editar</button>
                 </div>
                 </form>
+                <div class="alert alert-success" role="alert" *ngIf="cambiosGuardados">
+                    Se guardaron los cambios
+                </div>
             </div>
             
             
