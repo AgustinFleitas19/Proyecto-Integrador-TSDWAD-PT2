@@ -5,4 +5,5 @@ Este es un sitio web e-commerce donde se vende boletos a dististos puntos turís
 TECH STACK:
 HTML, CSS, Bootstrap, Typescript, Angular, Django, Django REST Framework
 
-##Video demostración del proyecto:
+## Video demostración del proyecto:
+https://drive.google.com/file/d/1uJscCn2_HiPrJkOY1_t2mnxSw3cqfaaJ/view?usp=sharing
